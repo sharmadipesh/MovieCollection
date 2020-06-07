@@ -1,5 +1,5 @@
 @each $size
-	in (10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60,80,120)
+	in (5,10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60,80,120)
 {
 	.m-#{$size} {
 		margin: #{$size}px;
@@ -47,4 +47,8 @@
 		padding-top: #{$size}px;
 		padding-bottom: #{$size}px;
 	}
+}
+
+.clickable{
+	cursor: pointer;
 }

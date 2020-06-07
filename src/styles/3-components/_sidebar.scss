@@ -1,0 +1,30 @@
+.sidebar-style-container{
+    // width: 6%;
+    width: 85px;
+    background-color: #3b3b3b;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    // font-family: $lato-semibold;
+    font-family: $lato-bold;
+    font-size: 12px;
+
+    .active-link{
+        color: #fcbc02!important;
+    }
+    .inactive-link{
+        color: #757575;
+    }
+
+    .sidebar-icon{
+        height: 40px;
+        width: 45px;
+    }
+    .sidebar-icon-logout{
+        height: 25px;
+        width: 25px;
+        transform: rotate(-180deg);
+    }
+}

@@ -5,9 +5,11 @@
 
 // 2- basics
 @import './2-basics/app';
+@import './2-basics/flexbox';
 
 // 3- components
 @import './3-components/header';
+@import './3-components/sidebar';
 
 // 4-pages
 @import './4-pages/common';
