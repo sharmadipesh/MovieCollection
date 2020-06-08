@@ -27,7 +27,7 @@ class TvSeries extends Component {
                 <div>
                     <Switch>
                         <Route exact  {...this.props} path={Routes.MySeries} component={MySeries} />
-                        <Route  {...this.props} path={Routes.Popular} component={Popular} />
+                        <Route exact {...this.props} path={Routes.Popular} component={Popular} />
                     </Switch>
                 </div>
             </div>

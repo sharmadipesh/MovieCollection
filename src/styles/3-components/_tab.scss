@@ -6,7 +6,8 @@
     .inactive-tab{
         background-color: transparent;
         padding: 4px 20px;
-        color: 	#3b3b3b;
+        border-radius: 4px;
+        color: #3b3b3b;
     }
 
     .active-tab{
@@ -14,7 +15,6 @@
         padding: 4px 20px;
         border-radius: 4px;
         color: 	#3b3b3b;
-        margin-right: 10px;
     }
 
 }
