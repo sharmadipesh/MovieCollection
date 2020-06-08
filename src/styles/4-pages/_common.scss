@@ -49,7 +49,7 @@
 	}
 }
 
-@each $size in (11,14)
+@each $size in (11,12,13,14,16)
 {
 	.font-size-#{$size} {
 		font-size: #{$size}px;
