@@ -1,7 +1,11 @@
 const Routes = {
     Home:'/',
     TvSeries:'/tv-series',
-    Movies:'/movies'
+    Movies:'/movies',
+
+
+    MySeries:'/tv-series',
+    Popular:'/tv-series/popular'
 }
 
 export {Routes}

@@ -1,0 +1,20 @@
+.tab-style-container{
+    font-size: 16px;
+    letter-spacing: 1.1px;
+    text-transform: capitalize;    
+
+    .inactive-tab{
+        background-color: transparent;
+        padding: 4px 20px;
+        color: 	#3b3b3b;
+    }
+
+    .active-tab{
+        background-color: #fcbc02;
+        padding: 4px 20px;
+        border-radius: 4px;
+        color: 	#3b3b3b;
+        margin-right: 10px;
+    }
+
+}

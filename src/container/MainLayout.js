@@ -17,7 +17,7 @@ class MainLayout extends Component {
                     <Switch>
                         <Route exact  {...this.props} path={Routes.Home} component={Home} />
                         <Route exact  {...this.props} path={Routes.TvSeries} component={TvSeries} />
-                        <Route exact  {...this.props} path={Routes.Movies} component={Movies} />
+                        <Route {...this.props} path={Routes.Movies} component={Movies} />
                     </Switch>
                 </div>
             </div>
