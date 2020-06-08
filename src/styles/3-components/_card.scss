@@ -9,3 +9,24 @@
         width: 35px;
     }
 }
+
+.movie-card{
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 10px;
+
+    .movie-poster{
+        height: 200px;
+        width: 150px;
+        border-radius: 5px;
+        border:3px solid #fcbc02 ;
+    }
+    .movie-name{
+        font-size: 18px;
+        font-family: $lato-semibold;
+    }
+    .movie-rating{
+        font-size: 11px;
+        font-family: $lato-semibold;
+    }
+}
