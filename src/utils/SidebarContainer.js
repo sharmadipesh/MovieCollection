@@ -7,6 +7,7 @@ class SidebarContainer extends Component {
 
     render() {
         const {pathname} = this.props.location;
+        console.log("dddd ",this.props);
         return (
             <div className="sidebar-style-container pt-60 pb-15 parent-col parent-h-space-between">
                 <div>
@@ -15,7 +16,7 @@ class SidebarContainer extends Component {
                         <div>Home</div>
                     </NavLink>
                     <NavLink exact activeClassName="active-link" to={Routes.TvSeries} className="inactive-link mb-25 parent-col parent-v-center">
-                        <Icon className="sidebar-icon mb-5" icon={pathname === Routes.TvSeries ? 'ICON_TV_SERIES_ACTIVE' :'ICON_TV_SERIES_INACTIVE'}/>
+                        <Icon className="sidebar-icon mb-5" icon={pathname === Routes.TvSeries || pathname ===  Routes.Popular ? 'ICON_TV_SERIES_ACTIVE' :'ICON_TV_SERIES_INACTIVE'}/>
                         <div>TV Series</div>
                     </NavLink>
                     <NavLink exact activeClassName="active-link" to={Routes.Movies} className="inactive-link parent-col parent-v-center">
