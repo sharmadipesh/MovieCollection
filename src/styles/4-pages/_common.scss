@@ -1,5 +1,5 @@
 @each $size
-	in (5,10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60,80,120)
+	in (3 ,5 ,7 ,10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60,80,120)
 {
 	.m-#{$size} {
 		margin: #{$size}px;
@@ -49,6 +49,17 @@
 	}
 }
 
+@each $size in (11,14)
+{
+	.font-size-#{$size} {
+		font-size: #{$size}px;
+	}
+}
+
 .clickable{
 	cursor: pointer;
 }
+
+// .font-size-11{
+// 	font-size: 11px;
+// }

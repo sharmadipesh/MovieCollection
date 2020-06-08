@@ -5,6 +5,7 @@ import Home from 'views/Home';
 import TvSeries from 'views/TvSeries';
 import Movies from 'views/Movies';
 import SidebarContainer from 'utils/SidebarContainer';
+import Header from 'utils/Header';
 
 class MainLayout extends Component {
     render() {
@@ -12,6 +13,7 @@ class MainLayout extends Component {
             <div>
                 <SidebarContainer {...this.props}/>
                 <div className="main-app-container">
+                    <Header {...this.props}/>
                     <Switch>
                         <Route exact  {...this.props} path={Routes.Home} component={Home} />
                         <Route exact  {...this.props} path={Routes.TvSeries} component={TvSeries} />
