@@ -15,13 +15,6 @@ class MySeries extends Component {
         return (
             <div>
                 <div className="parent-row parent-wrap parent-v-center mb-30">
-                    {/* <div className="movie-card">
-                        <img alt="movie-poster" src="img/narcos.jpg" className="movie-poster mb-7"/>
-                        <div className="movie-name">
-                            Narcos
-                        </div>
-                        <div className="movie-rating">iMDB Rating: 8.6/10</div>
-                    </div> */}
                     {this.props.default_tv_series.length && this.props.default_tv_series.map((value,index)=>
                         <div className="movie-card mr-20" key={index}>
                             <img alt="movie-poster" src={value.Poster} className="movie-poster mb-7"/>
