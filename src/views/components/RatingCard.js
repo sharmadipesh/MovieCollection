@@ -12,7 +12,7 @@ class RatingCard extends Component {
                             <Icon icon="ICON_IMDB" className="icon-imdb"/>
                         </div>
                         <div className="font-size-13 mb-5">Rating:</div>
-                        <div className="parent-row parent-h-center">
+                        <div className="parent-row parent-h-center rating-show">
                             <Progress 
                                 type="circle" 
                                 percent={this.props.rating} 
@@ -21,6 +21,7 @@ class RatingCard extends Component {
                                 strokeColor={'#fcbc02'}
                                 strokeWidth={7}
                             />
+                            <div className="rating">{this.props.rating}</div>
                         </div>
                     </div>   
             </>

@@ -8,6 +8,15 @@
         height: 35px;
         width: 35px;
     }
+    .rating-show{
+        position: relative;
+        .rating{
+            position: absolute;
+            top: 19px;
+            font-size: 30px;
+            font-family:$lato-light ;
+        }
+    }
 }
 
 .movie-card{
@@ -29,4 +38,27 @@
         font-size: 11px;
         font-family: $lato-semibold;
     }
+}
+
+.active-card{
+    background-color: #fcbc02;
+    border-radius: 10px;
+    padding: 15px;
+    width: 540px;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    color:#fff;
+    font-family: $lato-semibold;
+    font-size: 20px;
+
+    .active-poster-image{
+        height: 200px;
+        width: 150px;
+        border-radius: 5px;
+        border:3px solid #ffffff;
+    }
+    .series-name{
+        font-family: $lato-bold;
+        font-size: 30px;
+    }
+    // box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
