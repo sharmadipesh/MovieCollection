@@ -25,3 +25,25 @@ export const sortingLowtoHigh = (a,b) => {
 export const sortingHightoLow = (a,b) => {
     return b.imdbRating - a.imdbRating;
 };
+
+export const sortingOperationHandler =(expression,collection) => {
+    let data;
+    switch(expression) {
+        case "1":
+                data = collection.sort(sortingAtoZ);
+                break;
+        case "2":
+            data = collection.sort(sortingZtoA);
+            break;
+        case "3":
+                data = collection.sort(sortingLowtoHigh);
+                break;
+        case "4":
+                data = collection.sort(sortingHightoLow);
+                break;
+        default:
+            data = collection.sort(sortingAtoZ);
+            break;
+    }
+    return data;
+}

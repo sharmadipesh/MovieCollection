@@ -59,3 +59,12 @@
 .clickable{
 	cursor: pointer;
 }
+
+.Ss{
+	position: relative;
+	.ww{
+		position: absolute;
+		right: 0;
+		top: -57px;
+	}
+}
