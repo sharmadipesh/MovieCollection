@@ -24,7 +24,8 @@
     padding: 8px;
     border-radius: 10px;
     height: 270px;
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    transition: all 0.5s cubic-bezier(.25,.8,.25,1);
+
     .movie-poster{
         height: 200px;
         width: 150px;
@@ -54,6 +55,7 @@
     color:#fff;
     font-family: $lato-semibold;
     font-size: 20px;
+    transition: all 0.5s cubic-bezier(.25,.8,.25,1);
 
     .active-poster-image{
         // height: 200px;

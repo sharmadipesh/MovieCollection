@@ -1,2 +1,4 @@
 export const REDUX_SETUP = 'REDUX_SETUP';
 export const DEFAULT_TV_SERIES = 'DEFAULT_TV_SERIES';
+export const POPULAR_TV_SERIES = 'POPULAR_TV_SERIES';
+

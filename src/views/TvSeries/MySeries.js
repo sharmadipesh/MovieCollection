@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import RatingCard from 'views/components/RatingCard';
 import {getDefaultTvSeriesInfo} from 'redux/actions/TvSeries';
 import {connect} from 'react-redux';
 import idx from 'idx';
 import MovieDetailsPoster from 'views/components/MovieDetailsPoster';
 import MoviePoster from 'views/components/MoviePoster';
+import RatingCard from 'views/components/RatingCard';
 
 class MySeries extends Component {
 

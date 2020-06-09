@@ -1,8 +1,9 @@
-import { REDUX_SETUP, DEFAULT_TV_SERIES } from 'redux/Types';
+import { REDUX_SETUP, DEFAULT_TV_SERIES,POPULAR_TV_SERIES } from 'redux/Types';
 
 const initial_state = {
 	redux_setup: false,
-	default_tv_series:{}
+	default_tv_series:{},
+	popular_tv_series:{}
 };
 
 export default (state = initial_state, action) => {
@@ -16,6 +17,11 @@ export default (state = initial_state, action) => {
 			return {
 				...state,
 				default_tv_series: action.payload,
+			};
+		case POPULAR_TV_SERIES:
+			return {
+				...state,
+				popular_tv_series: action.payload,
 			};
 		default:
 			return state;
