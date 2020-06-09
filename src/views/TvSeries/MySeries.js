@@ -44,8 +44,8 @@ class MySeries extends Component {
     render() {
         return (
             <div>
-                <div className="Ss">
-                    <div className="parent-row parent-v-center ww">
+                <div className="drop-container">
+                    <div className="parent-row parent-v-center sorting-container">
                         <div className=" mr-30 sort-by-text">Sort By: </div>
                         <Select defaultValue="1"  onChange={this.handleChange}>
                             <Option value="1">Alphabet (a-z)</Option>

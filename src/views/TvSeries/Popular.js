@@ -5,12 +5,15 @@ import idx from 'idx';
 import MovieDetailsPoster from 'views/components/MovieDetailsPoster';
 import MoviePoster from 'views/components/MoviePoster';
 import RatingCard from 'views/components/RatingCard';
+import { Select } from 'antd';
+import {sortingOperationHandler} from 'views/components/Sorting';
+const { Option } = Select;
 
 class Popular extends Component {
-
     state = {
         activeCardIndex:0,
-        activeCardDetails:{}
+        activeCardDetails:{},
+        myPopularData:[]
     }
 
     activeSeriesHandler = (value,index) => {
@@ -20,16 +23,38 @@ class Popular extends Component {
         })
     }
 
+    handleChange =async expression => {
+        let data = await sortingOperationHandler(expression,[...this.state.myPopularData]);
+        await  this.setState({
+            myPopularData:data
+        })
+        this.activeSeriesHandler(idx(this.state.myPopularData,_=>_[0]),0);
+    }
+
     componentDidMount = async() =>{
         await this.props.getPopularTvSeriesInfo();
-        this.activeSeriesHandler(idx(this.props.popular_tv_series,_=>_[0]),0);
+        this.setState({
+            myPopularData:this.props.popular_tv_series
+        })
+        this.activeSeriesHandler(idx(this.state.myPopularData,_=>_[0]),0);
     }
 
     render() {
         return (
             <div>
+                <div className="drop-container">
+                    <div className="parent-row parent-v-center sorting-container">
+                        <div className=" mr-30 sort-by-text">Sort By: </div>
+                        <Select defaultValue="1"  onChange={this.handleChange}>
+                            <Option value="1">Alphabet (a-z)</Option>
+                            <Option value="2">Alphabet (z-a)</Option>
+                            <Option value="3">Rating (low to high)</Option>
+                            <Option value="4">Rating (high to low)</Option>
+                        </Select>
+                    </div>
+                </div>
                 <div className="parent-row parent-wrap parent-v-center mb-30">
-                    {this.props.popular_tv_series.length && this.props.popular_tv_series.map((value,index)=>
+                    {this.state.myPopularData.length && this.state.myPopularData.map((value,index)=>
                         <div 
                             className={this.state.activeCardIndex === index ? 'active-card mr-20 mb-20' : 'movie-card mr-20 mb-20 clickable'}
                             key={index} 
