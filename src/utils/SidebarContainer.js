@@ -9,13 +9,13 @@ class SidebarContainer extends Component {
         const {pathname} = this.props.location;
         console.log("dddd ",this.props);
         return (
-            <div className="sidebar-style-container pt-60 pb-15 parent-col parent-h-space-between">
+            <div className="sidebar-style-container pt-100 pb-15 parent-col parent-h-space-between">
                 <div>
                     <NavLink exact activeClassName="active-link" to={Routes.Home} className="inactive-link mb-25 parent-col parent-v-center">
                         <Icon className="sidebar-icon" icon={pathname === Routes.Home ? 'ICON_HOME_ACTIVE' :'ICON_HOME_INACTIVE'}/>
                         <div>Home</div>
                     </NavLink>
-                    <NavLink exact activeClassName="active-link" to={Routes.TvSeries} className="inactive-link mb-25 parent-col parent-v-center">
+                    <NavLink  activeClassName="active-link" to={Routes.TvSeries} className="inactive-link mb-25 parent-col parent-v-center">
                         <Icon className="sidebar-icon mb-5" icon={pathname === Routes.TvSeries || pathname ===  Routes.Popular ? 'ICON_TV_SERIES_ACTIVE' :'ICON_TV_SERIES_INACTIVE'}/>
                         <div>TV Series</div>
                     </NavLink>
