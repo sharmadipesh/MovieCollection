@@ -24,38 +24,8 @@ class MySeries extends Component {
     }
 
     render() {
-        console.log("ddaaa ",this.state.activeCardDetails.totalSeasons);
         return (
             <div>
-                {/* <div className="mb-30">
-                    <div className="active-card parent-row parent-h-space-between">
-                        <div className="parent-col parent-h-space-between">
-                            <div>
-                                <div className="series-name">Game of Thrones</div>
-                                <div>8 Seasons</div>
-                                <div>73 Episodes</div>
-                            </div>
-                            <div>
-                                <div>iMdB Rating: 9.5/10</div>
-                                <div>Go to iMDB Page</div>
-                            </div>
-                        </div>
-                        <img alt="poster" className="active-poster-image" src="img/narcos.jpg"/>
-                    </div>
-                </div> */}
-                {/* <div className="parent-row parent-wrap parent-v-center mb-30">
-                    {this.props.default_tv_series.length && this.props.default_tv_series.map((value,index)=>
-                        <div 
-                            className="movie-card mr-20 clickable" 
-                            key={index} 
-                            onClick={()=>this.activeSeriesHandler(value)}
-                            >
-                            <img alt="movie-poster" src={value.Poster} className="movie-poster mb-7"/>
-                            <div className="movie-name">{value.Title}</div>
-                            <div className="movie-rating">iMDB Rating: {value.imdbRating}/10</div>
-                        </div>
-                    )}
-                </div> */}
                 <div className="parent-row parent-wrap parent-v-center mb-50">
                     {this.props.default_tv_series.length && this.props.default_tv_series.map((value,index)=>
                         <div 
@@ -88,8 +58,6 @@ class MySeries extends Component {
                         </div>
                     )}
                 </div>
-
-
                 <div className="parent-row parent-wrap parent-v-center">
                     {Object.keys(this.state.activeCardDetails).length && 
                         Array.from(Array(Number(this.state.activeCardDetails.totalSeasons)), (e, i) => {
