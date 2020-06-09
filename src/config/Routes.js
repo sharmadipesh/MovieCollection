@@ -5,7 +5,9 @@ const Routes = {
 
 
     MySeries:'/tv-series',
-    Popular:'/tv-series/popular'
+    Popular:'/tv-series/popular',
+
+    Search:'/search'
 }
 
 export {Routes}

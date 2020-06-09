@@ -6,6 +6,7 @@ import TvSeries from 'views/TvSeries';
 import Movies from 'views/Movies';
 import SidebarContainer from 'utils/SidebarContainer';
 import Header from 'utils/Header';
+import Search from 'views/Search';
 
 class MainLayout extends Component {
     render() {
@@ -18,6 +19,7 @@ class MainLayout extends Component {
                         <Route exact  {...this.props} path={Routes.Home} component={Home} />
                         <Route   {...this.props} path={Routes.TvSeries} component={TvSeries} />
                         <Route exact  {...this.props} path={Routes.Movies} component={Movies} />
+                        <Route exact  {...this.props} path={Routes.Search} component={Search} />
                     </Switch>
                 </div>
             </div>

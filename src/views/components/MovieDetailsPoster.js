@@ -8,7 +8,9 @@ class MovieDetailsPoster extends Component {
                     <div className="parent-col parent-h-space-between">
                         <div>
                             <div className="series-name">{this.props.title}</div>
-                            <div>{this.props.totalSeasons} Seasons</div>
+                            {this.props.totalSeasons ?
+                                <div>{this.props.totalSeasons} Seasons</div>:null
+                            }
                             <div>{this.props.imdbVotes} iMDB Votes</div>
                         </div>
                         <div>

@@ -3,6 +3,7 @@ import { Menu, Dropdown } from 'antd';
 import { DownOutlined } from '@ant-design/icons';
 import Icon from 'utils/Icon';
 import moment from 'moment';
+import {Routes} from 'config/Routes';
 
 class Header extends Component {
     render() {
@@ -45,7 +46,9 @@ class Header extends Component {
                             </div>
                         </Dropdown>
                         <div className="strait-line mlr-15"></div>
-                        <Icon className="icon-size-22" icon="ICON_SEARCH"/>
+                        <div onClick={()=>this.props.history.push(Routes.Search)}>
+                            <Icon className="icon-size-22 clickable" icon="ICON_SEARCH"/>
+                        </div>
                     </div>
                 </div>
                 {/* <hr /> */}

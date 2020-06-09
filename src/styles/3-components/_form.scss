@@ -1,0 +1,32 @@
+// ..ant-btn{
+
+// }
+
+.ant-input{
+    width: 300px;
+    background-color: transparent;
+    &:hover,&:active,&:focus{
+        border: 1px solid #fcbc02;
+        background-color: #fff;
+    }
+}
+
+.ant-btn-primary{
+    background-color: #fcbc02;
+    border: 1px solid #fcbc02;
+    font-family: $lato-bold;
+    &:hover,&:active,&:focus{
+        background-color: #fcbc02;
+        border: 1px solid #fcbc02;
+        font-family: $lato-bold;
+    }
+}
+
+.ant-card{
+    border-radius: 10px;
+    .card-sub-name{
+        font-family: $lato-semibold;
+        font-size: 18px;
+        color: #fcbc02;
+    }
+}
