@@ -15,7 +15,7 @@ class RatingCard extends Component {
                         <div className="parent-row parent-h-center rating-show">
                             <Progress 
                                 type="circle" 
-                                percent={this.props.rating} 
+                                percent={this.props.rating*10} 
                                 width={85} 
                                 showInfo={false} 
                                 strokeColor={'#fcbc02'}
