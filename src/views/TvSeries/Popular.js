@@ -54,7 +54,7 @@ class Popular extends Component {
                     </div>
                 </div>
                 <div className="parent-row parent-wrap parent-v-center mb-30">
-                    {this.state.myPopularData.length && this.state.myPopularData.map((value,index)=>
+                    {this.state.myPopularData.length ? this.state.myPopularData.map((value,index)=>
                         <div 
                             className={this.state.activeCardIndex === index ? 'active-card mr-20 mb-20' : 'movie-card mr-20 mb-20 clickable'}
                             key={index} 
@@ -76,17 +76,17 @@ class Popular extends Component {
                                 />
                             }
                         </div>
-                    )}
+                    ):null}
                 </div>
                 <div className="parent-row parent-wrap parent-v-center">
-                    {Object.keys(this.state.activeCardDetails).length && 
+                    {Object.keys(this.state.activeCardDetails).length ? 
                         Array.from(Array(Number(this.state.activeCardDetails.totalSeasons)), (e, i) => {
                         return <RatingCard 
                             {...this.props}
                             seasonName={`Season ${i+1}`}
                             rating={idx(this.state.activeCardDetails,_=>_.imdbRating)}
                         />
-                    })}
+                    }):null}
                 </div>
             </div>
         );

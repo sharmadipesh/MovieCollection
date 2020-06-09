@@ -3,7 +3,7 @@ import MoviePoster from 'views/components/MoviePoster';
 import {connect} from 'react-redux';
 import {getMoviesDetails} from 'redux/actions/Movies';
 import {getPopularTvSeriesInfo,getDefaultTvSeriesInfo} from 'redux/actions/TvSeries';
-import {sortingAtoZ,sortingZtoA,sortingLowtoHigh,sortingHightoLow} from 'views/components/Sorting';
+import {sortingOperationHandler} from 'views/components/Sorting';
 import { Select } from 'antd';
 const { Option } = Select;
 
@@ -12,25 +12,9 @@ class Home extends Component {
         homeData:[]
     }
 
-    handleChange =expression => {
-        let data;
-        switch(expression) {
-            case "1":
-                    data = this.state.homeData.sort(sortingAtoZ);
-                    break;
-            case "2":
-                data = this.state.homeData.sort(sortingZtoA);
-                break;
-            case "3":
-                    data = this.state.homeData.sort(sortingLowtoHigh);
-                    break;
-            case "4":
-                    data = this.state.homeData.sort(sortingHightoLow);
-                    break;
-            default:
-                data = this.state.homeData.sort(sortingAtoZ);
-                break;
-        }
+    handleChange =async expression => {
+        let data = await sortingOperationHandler(expression,[...this.state.homeData]);
+        
         this.setState({
             homeData:data
         })
@@ -43,7 +27,6 @@ class Home extends Component {
         this.setState({
             homeData:[...this.props.default_tv_series,...this.props.popular_tv_series,...this.props.movies_data]
         })
-        console.log(this.state.homeData);
     }
 
     render() {

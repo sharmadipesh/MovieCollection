@@ -3,7 +3,7 @@ import MoviePoster from 'views/components/MoviePoster';
 import {connect} from 'react-redux';
 import {getMoviesDetails} from 'redux/actions/Movies';
 import { Select } from 'antd';
-import {sortingAtoZ,sortingZtoA,sortingLowtoHigh,sortingHightoLow} from 'views/components/Sorting';
+import {sortingOperationHandler} from 'views/components/Sorting';
 const { Option } = Select;
 
 
@@ -14,25 +14,8 @@ class Movies extends Component {
     }
 
 
-    handleChange =expression => {
-        let data;
-        switch(expression) {
-            case "1":
-                    data = this.state.moviesData.sort(sortingAtoZ);
-                    break;
-            case "2":
-                data = this.state.moviesData.sort(sortingZtoA);
-                break;
-            case "3":
-                    data = this.state.moviesData.sort(sortingLowtoHigh);
-                    break;
-            case "4":
-                    data = this.state.moviesData.sort(sortingHightoLow);
-                    break;
-            default:
-                data = this.state.moviesData.sort(sortingAtoZ);
-                break;
-        }
+    handleChange =async expression => {
+        let data = await sortingOperationHandler(expression,[...this.state.moviesData]);
         this.setState({
             moviesData:data
         })
@@ -62,7 +45,7 @@ class Movies extends Component {
                     </div>
                 </div>
                 <div className="parent-row parent-wrap">
-                    {this.props.movies_data.length && this.props.movies_data.map((value,index)=>
+                    {this.state.moviesData.length ? this.state.moviesData.map((value,index)=>
                         <div className="mb-20 mr-20 movie-card" key={index}>
                             <MoviePoster 
                                 poster={value.Poster}
@@ -70,7 +53,7 @@ class Movies extends Component {
                                 imdbRating={value.imdbRating}
                             />
                         </div>
-                    )}
+                    ):null}
                 </div>
             </div>
         );
