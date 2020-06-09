@@ -3,6 +3,8 @@ import RatingCard from 'views/components/RatingCard';
 import {getDefaultTvSeriesInfo} from 'redux/actions/TvSeries';
 import {connect} from 'react-redux';
 import idx from 'idx';
+import MovieDetailsPoster from 'views/components/MovieDetailsPoster';
+import MoviePoster from 'views/components/MoviePoster';
 
 class MySeries extends Component {
 
@@ -34,26 +36,19 @@ class MySeries extends Component {
                             onClick={()=>this.activeSeriesHandler(value,index)}
                             >
                             {this.state.activeCardIndex !== index ?
-                                <div>
-                                    <img alt="movie-poster" src={value.Poster} className="movie-poster mb-7"/>
-                                    <div className="movie-name">{value.Title}</div>
-                                    <div className="movie-rating">iMDB Rating: {value.imdbRating}/10</div>
-                                </div>
+                                <MoviePoster 
+                                    poster={value.Poster}
+                                    title={value.Title}
+                                    imdbRating={value.imdbRating}
+                                />
                                 :
-                                <div className="parent-row parent-h-space-between">
-                                    <div className="parent-col parent-h-space-between">
-                                        <div>
-                                            <div className="series-name">{value.Title}</div>
-                                            <div>{value.totalSeasons} Seasons</div>
-                                            <div>{value.imdbVotes} iMDB Votes</div>
-                                        </div>
-                                        <div>
-                                            <div>iMdB Rating: {value.imdbRating}/10</div>
-                                            <div>Go to iMDB Page</div>
-                                        </div>
-                                    </div>
-                                    <img alt="poster" className="active-poster-image" src={value.Poster}/>
-                                </div>
+                                <MovieDetailsPoster 
+                                    title={value.Title}
+                                    totalSeasons={value.totalSeasons}
+                                    imdbVotes={value.imdbVotes}
+                                    imdbRating={value.imdbRating}
+                                    poster={value.Poster}
+                                />
                             }
                         </div>
                     )}

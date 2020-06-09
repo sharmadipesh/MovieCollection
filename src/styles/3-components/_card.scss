@@ -24,6 +24,7 @@
     padding: 8px;
     border-radius: 10px;
     height: 270px;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     .movie-poster{
         height: 200px;
         width: 150px;
@@ -37,6 +38,9 @@
     .movie-rating{
         font-size: 11px;
         font-family: $lato-semibold;
+    }
+    &:hover{
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     }
 }
 
