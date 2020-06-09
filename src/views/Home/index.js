@@ -3,45 +3,75 @@ import MoviePoster from 'views/components/MoviePoster';
 import {connect} from 'react-redux';
 import {getMoviesDetails} from 'redux/actions/Movies';
 import {getPopularTvSeriesInfo,getDefaultTvSeriesInfo} from 'redux/actions/TvSeries';
+import {sortingAtoZ,sortingZtoA,sortingLowtoHigh,sortingHightoLow} from 'views/components/Sorting';
+import { Select } from 'antd';
+const { Option } = Select;
 
 class Home extends Component {
+    state={
+        homeData:[]
+    }
 
-    componentDidMount = () => {
-        this.props.getMoviesDetails();
-        this.props.getPopularTvSeriesInfo();
-        this.props.getDefaultTvSeriesInfo();
+    handleChange =expression => {
+        let data;
+        switch(expression) {
+            case "1":
+                    data = this.state.homeData.sort(sortingAtoZ);
+                    break;
+            case "2":
+                data = this.state.homeData.sort(sortingZtoA);
+                break;
+            case "3":
+                    data = this.state.homeData.sort(sortingLowtoHigh);
+                    break;
+            case "4":
+                    data = this.state.homeData.sort(sortingHightoLow);
+                    break;
+            default:
+                data = this.state.homeData.sort(sortingAtoZ);
+                break;
+        }
+        this.setState({
+            homeData:data
+        })
+    }
+
+    componentDidMount = async() => {
+        await  this.props.getMoviesDetails();
+        await  this.props.getPopularTvSeriesInfo();
+        await  this.props.getDefaultTvSeriesInfo();
+        this.setState({
+            homeData:[...this.props.default_tv_series,...this.props.popular_tv_series,...this.props.movies_data]
+        })
+        console.log(this.state.homeData);
     }
 
     render() {
         return (
-            <div className="parent-row parent-wrap">
-                {this.props.default_tv_series.length && this.props.default_tv_series.map((value,index)=>
-                    <div className="mb-20 mr-20 movie-card" key={index}>
-                        <MoviePoster 
-                            poster={value.Poster}
-                            title={value.Title}
-                            imdbRating={value.imdbRating}
-                        />
+            <div>
+                <div className="mb-20 parent-row parent-h-space-between parent-v-center">
+                    <div className="page-title">Home</div>
+                    <div className="parent-row parent-v-center">
+                        <div className=" mr-30 sort-by-text">Sort By: </div>
+                        <Select defaultValue="1"  onChange={this.handleChange}>
+                            <Option value="1">Alphabet (a-z)</Option>
+                            <Option value="2">Alphabet (z-a)</Option>
+                            <Option value="3">Rating (low to high)</Option>
+                            <Option value="4">Rating (high to low)</Option>
+                        </Select>
                     </div>
-                )}
-                {this.props.popular_tv_series.length && this.props.popular_tv_series.map((value,index)=>
-                    <div className="mb-20 mr-20 movie-card" key={index}>
-                        <MoviePoster 
-                            poster={value.Poster}
-                            title={value.Title}
-                            imdbRating={value.imdbRating}
-                        />
-                    </div>
-                )}
-                {this.props.movies_data.length && this.props.movies_data.map((value,index)=>
-                    <div className="mb-20 mr-20 movie-card" key={index}>
-                        <MoviePoster 
-                            poster={value.Poster}
-                            title={value.Title}
-                            imdbRating={value.imdbRating}
-                        />
-                    </div>
-                )}
+                </div>
+                <div className="parent-row parent-wrap">
+                    {this.state.homeData.length ? this.state.homeData.map((value,index)=>
+                        <div className="mb-20 mr-20 movie-card" key={index}>
+                            <MoviePoster 
+                                poster={value.Poster}
+                                title={value.Title}
+                                imdbRating={value.imdbRating}
+                            />
+                        </div>
+                    ):null}
+                </div>
             </div>
         );
     }

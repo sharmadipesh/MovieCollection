@@ -21,15 +21,12 @@ class Movies extends Component {
                     data = this.state.moviesData.sort(sortingAtoZ);
                     break;
             case "2":
-                    // code block
                 data = this.state.moviesData.sort(sortingZtoA);
                 break;
             case "3":
-                    // code block
                     data = this.state.moviesData.sort(sortingLowtoHigh);
                     break;
             case "4":
-                    // code block
                     data = this.state.moviesData.sort(sortingHightoLow);
                     break;
             default:
@@ -53,7 +50,7 @@ class Movies extends Component {
         return (
             <div>
                 <div className="mb-20 parent-row parent-h-space-between parent-v-center">
-                    <div>Movies</div>
+                    <div className="page-title">Movies</div>
                     <div className="parent-row parent-v-center">
                         <div className=" mr-30 sort-by-text">Sort By: </div>
                         <Select defaultValue="1"  onChange={this.handleChange}>
