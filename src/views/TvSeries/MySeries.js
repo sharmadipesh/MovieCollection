@@ -28,7 +28,7 @@ class MySeries extends Component {
     render() {
         return (
             <div>
-                <div className="parent-row parent-wrap parent-v-center mb-50">
+                <div className="parent-row parent-wrap parent-v-center mb-60">
                     {this.props.default_tv_series.length && this.props.default_tv_series.map((value,index)=>
                         <div 
                             className={this.state.activeCardIndex === index ? 'active-card mr-20 ' : 'movie-card mr-20 clickable'}
