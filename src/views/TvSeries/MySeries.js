@@ -29,7 +29,7 @@ class MySeries extends Component {
         return (
             <div>
                 <div className="parent-row parent-wrap parent-v-center mb-60">
-                    {this.props.default_tv_series.length && this.props.default_tv_series.map((value,index)=>
+                    {this.props.default_tv_series.length ? this.props.default_tv_series.map((value,index)=>
                         <div 
                             className={this.state.activeCardIndex === index ? 'active-card mr-20 ' : 'movie-card mr-20 clickable'}
                             key={index} 
@@ -51,17 +51,17 @@ class MySeries extends Component {
                                 />
                             }
                         </div>
-                    )}
+                    ):null}
                 </div>
                 <div className="parent-row parent-wrap parent-v-center">
-                    {Object.keys(this.state.activeCardDetails).length && 
+                    {Object.keys(this.state.activeCardDetails).length ?
                         Array.from(Array(Number(this.state.activeCardDetails.totalSeasons)), (e, i) => {
                         return <RatingCard 
                             {...this.props}
                             seasonName={`Season ${i+1}`}
                             rating={idx(this.state.activeCardDetails,_=>_.imdbRating)}
                         />
-                    })}
+                    }):null}
                 </div>
             </div>
         );
